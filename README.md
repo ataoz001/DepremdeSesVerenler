@@ -7,7 +7,7 @@ Kodu alip, gelistirmekte serbestsiniz. loginInfo adinda bir dosyaya username ve 
 
 Bir webdriver'a ve selenium kutuphanesine ihtiyaciniz var. Ayrica "loginInfo" adli bir python dosyasina twitter credentiallarinizi girmelisiniz.
 
-username = "<username>"
+username = "<username>" \n
 password = "<password>"
 
 
