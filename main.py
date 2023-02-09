@@ -6,6 +6,9 @@ import selenium_project
 # current module (__name__) as argument.
 app = Flask(__name__)
 
+with open('list_var.txt') as f:
+    contents = f.readlines()
+
 # The route() function of the Flask class is a decorator,
 # which tells the application which URL should call
 # the associated function.
@@ -13,7 +16,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', contents=contents)
 
 
 if __name__ == '__main__':

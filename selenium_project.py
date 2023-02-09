@@ -5,13 +5,18 @@ import pyautogui
 from selenium.webdriver.chrome.service import Service
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import json
 
-subject = "ses var"
+adres_kelimeleri = ("SOK", "sok.", "mah.", "MAH.", "CAD", "cad",
+                    "CD", "cd", "bulvarı", "BULVARI", "Apartmanı", "apartmanı", "apt")
 
-if __name__ == "__main__":
 
+def deprem_adresi_bul():
+    subject = "ses var"
+    Tweets = []
+    refinedTweets = list()
     service = Service(executable_path="/Users/apple/Downloads/geckodriver")
-    # initialize web driver
+
     with webdriver.Firefox(service=service) as driver:
         # navigate to the url
         driver.get('https://twitter.com')
@@ -40,8 +45,7 @@ if __name__ == "__main__":
         searchArea.send_keys("ses geliyor")
         time.sleep(1)
         pyautogui.press('enter')
-        time.sleep(10)
-        Tweets = []
+        time.sleep(5)
         articles = driver.find_elements(
             By.XPATH, "//article[@data-testid='tweet']")
         while True:
@@ -72,7 +76,19 @@ if __name__ == "__main__":
             time.sleep(3)
             articles = driver.find_elements(
                 By.XPATH, "//article[@data-testid='tweet']")
-            Tweets2 = list(set(Tweets))
-            if len(Tweets2) > 5:
+            if len(Tweets) > 10:
                 break
-        print(Tweets)
+
+        for tweet in Tweets:
+            temp_list = tweet['Body'].split(" ")
+            for i in temp_list:
+                i = i.replace('\n', '')
+                if i in adres_kelimeleri:
+                    print('c')
+                    refinedTweets.append(tweet)
+                    break
+    return (refinedTweets)
+
+
+if __name__ == "__main__":
+    deprem_adresi_bul()
