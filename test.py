@@ -5,14 +5,18 @@ adres = selenium_project.deprem_adresi_bul()
 with open("list_var.txt", "a") as file:
     for tweet in adres:
         file.write(
-            "**************************************************\n")
+            "*****************************************************\n")
 
-        file.write("""Tweet:
+        file.write("""
+        
+        Tweet:
+
         Atan: {}
 
         Zaman: {}
 
-        ICERIK:{}        
+        ICERIK:
+        {}        
         """.format(tweet["UserTags"], tweet["TimeStamps"], tweet["Body"]))
 
         file.write(

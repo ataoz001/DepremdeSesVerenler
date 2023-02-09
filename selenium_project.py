@@ -7,7 +7,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import json
 
-adres_kelimeleri = ("SOK", "sok.", "mah.", "MAH.", "CAD", "cad",
+adres_kelimeleri = ("SOK", "sok.", "mah.", "MAH.", "CAD", "cad", "caddesi", "mahallesi", "Mahallesi",
                     "CD", "cd", "bulvarı", "BULVARI", "Apartmanı", "apartmanı", "apt")
 
 
@@ -76,6 +76,7 @@ def deprem_adresi_bul():
             time.sleep(3)
             articles = driver.find_elements(
                 By.XPATH, "//article[@data-testid='tweet']")
+            print("a")
             if len(Tweets) > 10:
                 break
 
