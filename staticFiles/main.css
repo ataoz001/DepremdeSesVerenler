@@ -1,0 +1,28 @@
+body {
+    background: Linen;
+    margin-top: 50px;
+}
+
+h1 {
+    text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 2.5em;
+    color: FireBrick;
+}
+
+h2 {
+
+    text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 1em;
+    color: rgb(64, 12, 12);
+
+
+
+}
+
+p {
+    font-family: Georgia, serif;
+    font-size: 1.2em;
+    color: DarkSlateGray;
+}

@@ -5,15 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='/staticFiles/main.css' />
     <title>Deprem'de Ses Gelen yerler</title>
 </head>
 
 <body>
-    <h1>Ses Verenler</h1>
+    <h1> Ses Verenler</h1>
+
+    <h2>Bu site depremde ses veren adreslerin tweetlerini bir araya toplamak için yapılmıştır.</h2>
 
     {% for i in contents%}
     <p>{{i}}</p>
     {%endfor%}
+
+    <p> Bu site Atahan Ozdogan tarafından 6 Şubat depreminde enkaz altındaki insanlara yardımcı olabilmek amacıyla
+        yapılmıştır. </p>
 
 </body>
 
