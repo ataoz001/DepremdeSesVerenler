@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 import json
 
 adres_kelimeleri = ("SOK", "sok.", "mah.", "MAH.", "CAD", "cad", "caddesi", "mahallesi", "Mahallesi",
-                    "CD", "cd", "bulvarı", "BULVARI", "Apartmanı", "apartmanı", "apt")
+                    "CD", "cd", "bulvarı", "BULVARI", "Apartmanı", "apartmanı", "apt", "CADDESİ", "BLOK", "Blok", "Binası", "cad.", "CAD.", "Bulvarı", "Sok.", "sok.", "sokağı", "salonu", "girişi", "binası", "BİNASI", "BLOK", "Apt.", "Apt", "apt", "apt.", "Mah.", "Mah", "Blv.", "BLV", "APARTMANI", "HATAY", "Hatay", "hatay", "Maraş", "Kahramanmaraş", "KAHRAMANMARAŞ", "Mersin", "MERSİN")
 
 
 def deprem_adresi_bul():
@@ -68,8 +68,8 @@ def deprem_adresi_bul():
                 Tweet_body = driver.find_element(
                     By.XPATH, ".//div[@data-testid='tweetText']").text
                 tweet["Body"] = Tweet_body
-
-            Tweets.append(tweet)
+            if tweet["TimeStamps"][8] == '1':
+                Tweets.append(tweet)
 
             driver.execute_script(
                 'window.scrollTo(0,document.body.scrollHeight);')
@@ -82,12 +82,17 @@ def deprem_adresi_bul():
 
         for tweet in Tweets:
             temp_list = tweet['Body'].split(" ")
+            print(temp_list)
             for i in temp_list:
+
                 i = i.replace('\n', '')
+                print(i)
                 if i in adres_kelimeleri:
                     print('c')
                     refinedTweets.append(tweet)
                     break
+    print(Tweets)
+    print(refinedTweets)
     return (refinedTweets)
 
 
