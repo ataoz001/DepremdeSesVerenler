@@ -1,4 +1,7 @@
 # DepremdeSesVerenler
+
+WEBSITESI : https://depremdesesvar-3.atahanzdoan.repl.co/
+
 Twitterdak #Sesvar hashtagi altindaki tum tweetleri tarayarak icinde adres olanlari bulup web sitesinde gostermek icin kod. 
 
 Site fonksiyonle bir sekilde calisiyor. Umarim faydali olur.
