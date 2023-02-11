@@ -6,9 +6,8 @@ from selenium.webdriver.chrome.service import Service
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-
 adres_kelimeleri = ("SOK", "sok.", "mah.", "MAH.", "CAD", "cad", "caddesi", "mahallesi", "Mahallesi",
-                    "CD", "cd", "bulvarı", "BULVARI", "Apartmanı", "apartmanı", "apt", "CADDESİ", "BLOK", "Blok", "Binası", "cad.", "CAD.", "Bulvarı", "Sok.", "sok.", "sokağı", "salonu", "girişi", "binası", "BİNASI", "BLOK", "Apt.", "Apt", "apt", "apt.", "Mah.", "Mah", "Blv.", "BLV", "APARTMANI", "HATAY", "Hatay", "hatay", "Maraş", "Kahramanmaraş", "KAHRAMANMARAŞ", "Mersin", "MERSİN")
+                    "CD", "cd", "bulvarı", "BULVARI", "Apartmanı", "apartmanı", "apt", "CADDESİ", "BLOK", "Blok", "Binası", "cad.", "CAD.", "Bulvarı", "Sok.", "sok.", "sokağı", "salonu", "girişi", "binası", "BİNASI", "BLOK", "Apt.", "Apt", "apt", "apt.", "Mah.", "Mah", "Blv.", "BLV", "APARTMANI", "HATAY", "Hatay", "hatay", "Maraş", "Kahramanmaraş", "KAHRAMANMARAŞ", "Mersin", "MERSİN", "blok", "sitesi", "Sitesi", "SİTESİ", "BLOK", "Blok")
 
 
 def deprem_adresi_bul():
@@ -50,6 +49,7 @@ def deprem_adresi_bul():
             By.XPATH, "//article[@data-testid='tweet']")
         while True:
             tweet = {
+
                 "UserTags": '',
                 "TimeStamps": '',
                 "Body": ''
